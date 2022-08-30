@@ -7,8 +7,8 @@ from urllib3 import disable_warnings
 resp = requests.get(url="http://api.open-notify.org/iss-now.json")
 json_rep = resp.json()
 
-my_email = "avrahulkanna17@gmail.com"
-passw = "avcqikybvlvjahyw"
+my_email = "email" # your email id
+passw = "password" # your password
 
 connection = smtplib.SMTP("smtp.gmail.com")
 connection.starttls()
@@ -38,5 +38,5 @@ td = dt.datetime
 time = td.now()
 
 if abs(float(latitude)-LATITUDE) <= 5 and abs(float(longitude)-LONGITUDE) <= 5 and int(time.hour) >= int(sunset) and int(time.hour) <= int(sunrise):
-    connection.sendmail(from_addr=my_email, to_addrs="avrahulkanna17@gmail.com",
+    connection.sendmail(from_addr=my_email, to_addrs="other_email_id",
                         msg="Look up the Sky. You may find something interesting (Not ISS). Just Kidding.")
